@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Container, Pai, Name, Align, Extra } from "./style"
 import { useSelector, useDispatch } from 'react-redux';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
@@ -10,19 +10,15 @@ import Collapse from "@material-ui/core/Collapse";
 
 export default function SubMenu({ menu }) {
 
-    const [Menu, SetMenu] = useState({
-
-    })
-    useEffect(() => {
-    }, []);
+    const dispatch = useDispatch();
+  
     function handlestate(m) {
         m.flag = !m.flag
-        SetMenu({ ...menu });
+        dispatch({type:'OPEN_MENU', m})
     }
     return (
         <Container>{menu.map(m => (
             <>
-                {console.log(m)}
                 <Align>
                     {m.sub ?
                         <>

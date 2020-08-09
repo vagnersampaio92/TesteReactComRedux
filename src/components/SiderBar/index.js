@@ -8,23 +8,21 @@ import Collapse from "@material-ui/core/Collapse";
 
 export default function CourseList() {
     const menustate = useSelector(state => state);
-
-    const [Menu, SetMenu] = useState({
-        data: menustate.data
-    })
+    const dispatch = useDispatch();
+//Não precisava usar o useState, mas coloquei para diminuir a verbosidade já que posso usar apenas Menu no lugar de menustate.data, e quis demonstrar o uso deste hook também
+    const [Menu, SetMenu] = useState( 
+        menustate.data
+    )
   
-
     function handlestate(menu) {
         menu.flag = !menu.flag
-
-        SetMenu({ ...Menu });
-
-
+        // SetMenu({ ...Menu }); // quis por para demonstrar o uso caso não tivesse usando o redux
+        dispatch({type:'OPEN_MENU', menu})
     }
 
     return (
         <>
-            <Container>{Menu.data.map(menu => (
+            <Container>{Menu.map(menu => (
                 <>
                     <Align>
                         {menu.flag ? <ExpandMoreIcon onClick={() => handlestate(menu)}></ExpandMoreIcon> : <ExpandLessIcon onClick={() => handlestate(menu)}></ExpandLessIcon>}
