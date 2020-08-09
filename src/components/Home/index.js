@@ -1,14 +1,14 @@
 import React from 'react';
-import Menu from '../SiderBar'
+import Menu from '../SideBar'
 import { Container } from "./style"
-export default function CourseList() {
+const Home=()=> {
     return(
-    <>
+    
     <Container>
     <Menu/>
     </Container>
     
-    </>
+    
     )
 }
-
+export default Home

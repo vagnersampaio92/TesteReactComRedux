@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container, Pai, Name, Align } from "./style"
 import { useSelector, useDispatch } from 'react-redux';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Submenu from '../SubMenu'
 import Collapse from "@material-ui/core/Collapse";
 
-export default function CourseList() {
+const SideBar = ()=> {
     const menustate = useSelector(state => state);
     const dispatch = useDispatch();
 //Não precisava usar o useState, mas coloquei para diminuir a verbosidade já que posso usar apenas Menu no lugar de menustate.data, e quis demonstrar o uso deste hook também
@@ -21,7 +21,7 @@ export default function CourseList() {
     }
 
     return (
-        <>
+        
             <Container>{Menu.map(menu => (
                 <>
                     <Align>
@@ -35,7 +35,8 @@ export default function CourseList() {
                     </Collapse>
                 </>
             ))}</Container>
-        </>
+      
     )
 }
 
+export default SideBar

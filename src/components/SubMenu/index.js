@@ -8,7 +8,7 @@ import Collapse from "@material-ui/core/Collapse";
 // const   menu = useSelector(state => state.data);
 
 
-export default function SubMenu({ menu }) {
+const SubMenu=({ menu })=> {
 
     const dispatch = useDispatch();
   
@@ -48,3 +48,4 @@ export default function SubMenu({ menu }) {
     )
 }
 
+export default SubMenu
