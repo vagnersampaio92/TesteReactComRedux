@@ -14,7 +14,7 @@ export default function SubMenu({ menu }) {
   
     function handlestate(m) {
         m.flag = !m.flag
-        dispatch({type:'OPEN_MENU', m})
+        dispatch({type:'HANDLE_MENU', m})
     }
     return (
         <Container>{menu.map(m => (

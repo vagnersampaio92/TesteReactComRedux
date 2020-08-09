@@ -17,7 +17,7 @@ export default function CourseList() {
     function handlestate(menu) {
         menu.flag = !menu.flag
         // SetMenu({ ...Menu }); // quis por para demonstrar o uso caso não tivesse usando o redux
-        dispatch({type:'OPEN_MENU', menu})
+        dispatch({type:'HANDLE_MENU', menu})
     }
 
     return (

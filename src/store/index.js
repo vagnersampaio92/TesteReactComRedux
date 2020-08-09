@@ -66,7 +66,7 @@ const INITIAL_STATE = {
 
 function courses(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case 'OPEN_MENU':
+    case 'HANDLE_MENU':
       return { ...state, data: [...state.data, action.menu] };
     default:
       return state;
